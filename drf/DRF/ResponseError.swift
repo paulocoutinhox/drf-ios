@@ -1,6 +1,6 @@
 import Foundation
 
-struct APIResponseError: Decodable {
+struct ResponseError: Decodable {
     let detail: String?
     let code: String?
 }

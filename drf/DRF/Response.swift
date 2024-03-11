@@ -1,4 +1,4 @@
-struct APIResponse<T> {
+struct Response<T> {
     var success: Bool
     var httpCode: Int
     var message: String?
