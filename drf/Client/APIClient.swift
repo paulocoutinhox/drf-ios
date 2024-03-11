@@ -1,13 +1,5 @@
 import Foundation
 
-struct APIResponse<T> {
-    var success: Bool
-    var httpCode: Int
-    var message: String?
-    var errors: [String: [String]]?
-    var data: T?
-}
-
 class APIClient {
     static let shared = APIClient()
     private let baseURL = URL(string: "http://localhost:8000/api/")
@@ -80,7 +72,7 @@ class APIClient {
                     }
                 case 401...499:
                     do {
-                        let errorDetail = try decoder.decode(AuthError.self, from: responseData)
+                        let errorDetail = try decoder.decode(APIResponseError.self, from: responseData)
                         apiResponse.message = errorDetail.code ?? "error"
                         
                         if let errorDetail = errorDetail.detail {
@@ -100,16 +92,4 @@ class APIClient {
             }
         }.resume()
     }
-}
-
-struct AuthError: Decodable {
-    let detail: String?
-    let code: String?
-}
-
-struct GenericListResponse<T: Decodable>: Decodable {
-    let count: Int
-    let next: URL?
-    let previous: URL?
-    let results: T
 }

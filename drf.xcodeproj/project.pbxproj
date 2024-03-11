@@ -15,6 +15,8 @@
 		3AEEC0A42B9F1FC80037FF3D /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEC0A32B9F1FC80037FF3D /* APIResponse.swift */; };
 		3AEEC0A72B9F20320037FF3D /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEC0A62B9F20320037FF3D /* Customer.swift */; };
 		3AEEC0AB2B9F233B0037FF3D /* LoginToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEC0AA2B9F233B0037FF3D /* LoginToken.swift */; };
+		3AEEC0AD2B9F43AA0037FF3D /* APIResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEC0AC2B9F43AA0037FF3D /* APIResponseError.swift */; };
+		3AEEC0AF2B9F43C70037FF3D /* GenericListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEC0AE2B9F43C70037FF3D /* GenericListResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		3AEEC0A32B9F1FC80037FF3D /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		3AEEC0A62B9F20320037FF3D /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		3AEEC0AA2B9F233B0037FF3D /* LoginToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginToken.swift; sourceTree = "<group>"; };
+		3AEEC0AC2B9F43AA0037FF3D /* APIResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseError.swift; sourceTree = "<group>"; };
+		3AEEC0AE2B9F43C70037FF3D /* GenericListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericListResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +87,9 @@
 			isa = PBXGroup;
 			children = (
 				3AEEC0A32B9F1FC80037FF3D /* APIResponse.swift */,
+				3AEEC0AC2B9F43AA0037FF3D /* APIResponseError.swift */,
 				3AEEC0A62B9F20320037FF3D /* Customer.swift */,
+				3AEEC0AE2B9F43C70037FF3D /* GenericListResponse.swift */,
 				3AEEC0AA2B9F233B0037FF3D /* LoginToken.swift */,
 			);
 			path = Models;
@@ -176,8 +182,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AEEC0952B9F1DFC0037FF3D /* ContentView.swift in Sources */,
+				3AEEC0AD2B9F43AA0037FF3D /* APIResponseError.swift in Sources */,
 				3AEEC0AB2B9F233B0037FF3D /* LoginToken.swift in Sources */,
 				3AEEC0A72B9F20320037FF3D /* Customer.swift in Sources */,
+				3AEEC0AF2B9F43C70037FF3D /* GenericListResponse.swift in Sources */,
 				3AEEC0932B9F1DFC0037FF3D /* drfApp.swift in Sources */,
 				3AEEC0A42B9F1FC80037FF3D /* APIResponse.swift in Sources */,
 				3AEEC0A22B9F1EFB0037FF3D /* APIClient.swift in Sources */,
