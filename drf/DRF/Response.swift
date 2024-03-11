@@ -1,3 +1,5 @@
+import Foundation
+
 struct Response<T> {
     var success: Bool
     var httpCode: Int

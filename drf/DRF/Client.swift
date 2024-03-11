@@ -1,7 +1,7 @@
 import Foundation
 
-class APIClient {
-    static let shared = APIClient()
+class Client {
+    static let shared = Client()
 
     private var baseURL = URL(string: "http://localhost:8000/api/")
     private var authToken: String?
@@ -16,7 +16,7 @@ class APIClient {
 
     func request<T: Decodable>(endpoint: String, method: String, parameters: [String: Any]? = nil, type: ResponseType, completion: @escaping (Result<Response<T>, Error>) -> Void) {
         guard let url = URL(string: endpoint, relativeTo: baseURL) else {
-            let error = NSError(domain: "APIClient", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
+            let error = NSError(domain: "Client", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
             completion(.failure(error))
             return
         }
@@ -40,7 +40,7 @@ class APIClient {
 
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let httpResponse = response as? HTTPURLResponse, let responseData = data else {
-                let error = NSError(domain: "APIClient", code: -1, userInfo: [NSLocalizedDescriptionKey: "Network error or no data"])
+                let error = NSError(domain: "Client", code: -1, userInfo: [NSLocalizedDescriptionKey: "Network error or no data"])
                 completion(.failure(error))
                 return
             }

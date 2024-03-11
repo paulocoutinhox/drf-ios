@@ -6,11 +6,11 @@ func doLogin() {
         "password": "admin",
     ]
 
-    APIClient.shared.request(endpoint: "token/", method: "post", parameters: loginData, type: .single) { (result: Result<Response<ResponseAuthToken>, Error>) in
+    Client.shared.request(endpoint: "token/", method: "post", parameters: loginData, type: .single) { (result: Result<Response<ResponseAuthToken>, Error>) in
         switch result {
         case let .success(response):
             if let data = response.data {
-                APIClient.shared.setAuthToken(data.access)
+                Client.shared.setAuthToken(data.access)
                 print("Login Token: ", data.access)
 
                 doGetCustomer()
@@ -24,7 +24,7 @@ func doLogin() {
 }
 
 func doGetCustomer() {
-    APIClient.shared.request(endpoint: "customer/1", method: "get", type: .single) { (result: Result<Response<Customer>, Error>) in
+    Client.shared.request(endpoint: "customer/1", method: "get", type: .single) { (result: Result<Response<Customer>, Error>) in
         switch result {
         case let .success(response):
             if let data = response.data {
@@ -41,7 +41,7 @@ func doGetCustomer() {
 }
 
 func doGetCustomers() {
-    APIClient.shared.request(endpoint: "customer/", method: "get", type: .list) { (result: Result<Response<[Customer]>, Error>) in
+    Client.shared.request(endpoint: "customer/", method: "get", type: .list) { (result: Result<Response<[Customer]>, Error>) in
         switch result {
         case let .success(response):
             if let data = response.data {
